@@ -9,4 +9,7 @@ prepare_task:
     - tar -C / -xvzf src.txz
 
 build_task:
-  check_script: ls
+  depends_on:
+    - prepare
+  check_script: sh ./buildimg.sh /usr/src erl.img
+
