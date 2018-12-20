@@ -4,12 +4,12 @@ freebsd_instance:
 prepare_task:
   src_cache:
     folder: /usr/src
-  install_script:
-    - fetch http://ftp.freebsd.org/pub/FreeBSD/releases/amd64/12.0-RELEASE/src.txz
-    - tar -C / -xvzf src.txz
+    populate_script:
+      - fetch http://ftp.freebsd.org/pub/FreeBSD/releases/amd64/12.0-RELEASE/src.txz
+      - tar -C / -xvzf src.txz
 
 build_task:
   depends_on:
     - prepare
-  check_script: sh ./buildimg.sh /usr/src erl.img
+  check_script: uname -a
 
