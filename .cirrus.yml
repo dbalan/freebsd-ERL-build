@@ -11,5 +11,5 @@ prepare_task:
 build_task:
   depends_on:
     - prepare
-  check_script: uname -a
+  check_script: sh ./buildimg.sh /usr/src freebsd-mips-erl.img
 
