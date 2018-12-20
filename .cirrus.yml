@@ -3,4 +3,3 @@ freebsd_instance:
 
 task:
   script: echo "hello world"
-  script: ls
