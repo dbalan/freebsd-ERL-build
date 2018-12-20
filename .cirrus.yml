@@ -6,7 +6,7 @@ prepare_task:
     folder: /usr/src
   install_script:
     - fetch http://ftp.freebsd.org/pub/FreeBSD/releases/amd64/12.0-RELEASE/src.txz
-    - tar xvf -C / src.txz
+    - tar -C / -xvzf src.txz
 
 build_task:
   check_script: ls
