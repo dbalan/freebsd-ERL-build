@@ -2,9 +2,10 @@ freebsd_instance:
   image: freebsd-12-0-release-amd64
 
 prepare_task:
-  check_script: uname -a
-  fetch_source_script:
-    - fetch ftp://ftp.freebsd.org/pub/FreeBSD/releases/amd64/12.0-RELEASE/src.txz
+  src_cache:
+    folder: /usr/src
+  install_script:
+    - fetch http://ftp.freebsd.org/pub/FreeBSD/releases/amd64/12.0-RELEASE/src.txz
     - tar xvf -C / src.txz
 
 build_task:
